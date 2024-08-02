@@ -33,7 +33,7 @@ writexl: We use the writexl package to write Excel files.
 The ipumsr package uses IPUMS' Application Programming Interface (API), which requires a key. If you do not have an IPUMS API key, we recommend reading the instructions provided in the Introduction to the IPUMS API for R Users [article](https://tech.popdata.org/ipumsr/articles/ipums-api.html).
 
 ## Data Sources
-NHGIS environmental summaries draw on a variety of different data sources. We import polygon mapping file depicting the footprints/boundaries of geographic units (e.g, counties, cities, states) from [IPUMS NHGIS](https://www.nhgis.org/data-availability#gis-files). Likewise, the environmental dataset (likely be a raster dataset) describing environmental characteristic (e.g., land cover, climate) are imported from [here](https://www.mrlc.gov/data).
+NHGIS environmental summaries draw on a variety of different data sources. We import polygon mapping file depicting the footprints/boundaries of geographic units (e.g, counties, cities, states) from [IPUMS NHGIS](https://www.nhgis.org/data-availability#gis-files). Likewise, the environmental dataset (likely be a raster dataset) describing environmental characteristic (e.g., land cover, climate) are imported from [MRLC](https://www.mrlc.gov/data).
 
 ## Processing Pipeline
 ### 1. Data Acquisition
