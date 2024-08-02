@@ -1,0 +1,1 @@
+This repository contains the code and output of the 2024 ISDRI SDF - NHGIS. The main objective of this project was to construct small-area environmental summaries that will be disseminated through IPUMS NHGIS. 
