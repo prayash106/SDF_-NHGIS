@@ -15,12 +15,19 @@ This repository provides instructions and code used to generate the environmenta
 The NHGIS code relies on a number of R packages. We recommend users install the following packages before they run any of the NHGIS scripts:
 
 tidyverse: Our code leverages many functions provided by the packages in the tidyverse collection.
+
 ipumsr: We use the ipumsr package to programmatically access IPUMS metadata and generate, submit, and download IPUMS extracts.
+
 exactextractr: We use the exactextractr package to extract summary data from raster datasets.
+
 sf: We use the sf package for handling and analyzing spatial data.
+
 terra: We use the terra package for working with raster data.
+
 dplyr: We use the dplyr package for data manipulation.
+
 tidyr: We use the tidyr package for data tidying.
+
 writexl: We use the writexl package to write Excel files.
 
 The ipumsr package uses IPUMS' Application Programming Interface (API), which requires a key. If you do not have an IPUMS API key, we recommend reading the instructions provided in the Introduction to the IPUMS API for R Users article.
