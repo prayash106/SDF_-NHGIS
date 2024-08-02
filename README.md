@@ -26,7 +26,7 @@ The main output of the project is a CSV file containing these environmental summ
 - Steve Manson (Geography, Environment & Society) - manson@umn.edu
 
 ### Fellows
-- Prayash Chalise (Graduate Fellow - Applied Economics) - patha106@umn.edu
+- Prayash Pathak Chalise (Graduate Fellow - Applied Economics) - patha106@umn.edu
 - Saemi Lee (Undergraduate Fellow - Geography, Environment & Society) - lee03023@umn.edu
 
 ### Honorary Fellow
