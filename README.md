@@ -12,7 +12,7 @@ Key outcomes of the project include environmental summary data and a code reposi
 This repository provides instructions and code used for the above mentioned project. We do this for two reasons. First, we believe in transparency and want to provide users with the chance to check our work. Second, while we think our summaries are generally useful for scientists, we understand that people may want to customize summaries for their particular analyses. They can use our code as the basis for creating customized summaries.
 
 ## Required R Packages
-The code relies on a number of R packages. We recommend users install the following packages before they run any of the NHGIS scripts:
+The code relies on a number of R packages. We recommend users install the following packages before they run any of the scripts:
 
 tidyverse: Our code leverages many functions provided by the packages in the tidyverse collection.
 
