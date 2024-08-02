@@ -49,7 +49,7 @@ Transforming Data: Filter out non-contiguous US states and align the coordinate 
 Calculating Summary Measures: For each year of land cover data, calculate the land cover fractions by overlaying it with the county-level shapefiles using the exactextract package. The results include summaries of land cover classes for each geographic unit.
 
 ### 3. Output Generation
-Output the processed data to CSV files for each year, followed by merging them together. Repeat the same process for any geographic unit of choice.
+Output the processed data to CSV files for each year, followed by merging them together to a single file. Repeat the same process for any geographic unit of choice.
 
 ## Team Members
 
