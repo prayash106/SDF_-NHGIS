@@ -1,6 +1,6 @@
 # README - 2024 ISRDI SDF - NHGIS
 
-This repository details the code and output of the [2024 ISDRI SDF - NHGIS](https://isrdi.umn.edu/summer-2024-projects). The main objective of this project is to construct small-area environmental summaries that will be disseminated through IPUMS NHGIS. The output files contain a replicable data processing pipeline in R that:
+This repository details the code and output of the [2024 ISDRI SDF - NHGIS](https://isrdi.umn.edu/summer-2024-projects) project. The main objective of this project is to construct small-area environmental summaries that will be disseminated through IPUMS NHGIS. The output files contain a replicable data processing pipeline in R that:
 
 1. Acquires environmental data, including land cover and climate information, for the United States.
 2. Acquires GIS data describing the boundaries of different geographic units, including counties, cities, census tracts, and places.
