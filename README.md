@@ -9,15 +9,40 @@ This repository details the code and output of the [2024 ISDRI SDF - NHGIS](http
 
 Key outcomes of the project include environmental summary data and a code repository.
 
-We created land cover summaries from the National Land Cover Database ([NLCD](https://www.mrlc.gov)) for the following geographic units:
-- 2020 and 2022 US counties
-- 2020 and 2022 US census tracts
-- 2022 Core-Based Statistical Areas (CBSAs)
-- 2022 place points
+This repository provides instructions and code used to generate the environmental summaries. We do this for two reasons. First, we believe in transparency and want to provide users with the chance to check our work. Second, while we think our summaries are generally useful for scientists, we understand that people may want to customize summaries for their particular analyses. They can use our code as the basis for creating customized summaries.
 
-The core workflow of our code involves the use of the [ipumsr](https://tech.popdata.org/ipumsr/) package to extract the boundary files for our geographic unit of choice, followed by the use of the [exactextractr](https://github.com/isciences/exactextractr) package to extract the summary data for all [epochs](https://www.mrlc.gov/data) and 22 [land cover classes](https://www.mrlc.gov/data/legends/national-land-cover-database-class-legend-and-description) of NLCD.
+## Required R Packages
+The NHGIS code relies on a number of R packages. We recommend users install the following packages before they run any of the NHGIS scripts:
 
-The main output of the project is a CSV file containing these environmental summaries, ready to be disseminated via IPUMS NHGIS. The code first generates time-varied file outputs for all epochs of NLCD, followed immediately by a merged CSV file of these epochs. We also provide a codebook describing the rows and columns of the dataset, which should be referred to for detailed information.
+tidyverse: Our code leverages many functions provided by the packages in the tidyverse collection.
+ipumsr: We use the ipumsr package to programmatically access IPUMS metadata and generate, submit, and download IPUMS extracts.
+exactextractr: We use the exactextractr package to extract summary data from raster datasets.
+sf: We use the sf package for handling and analyzing spatial data.
+terra: We use the terra package for working with raster data.
+dplyr: We use the dplyr package for data manipulation.
+tidyr: We use the tidyr package for data tidying.
+writexl: We use the writexl package to write Excel files.
+
+The ipumsr package uses IPUMS' Application Programming Interface (API), which requires a key. If you do not have an IPUMS API key, we recommend reading the instructions provided in the Introduction to the IPUMS API for R Users article.
+
+## Data Sources
+NHGIS environmental summaries draw on a variety of different data sources. We import polygon mapping file depicting the footprints/boundaries of geographic units (e.g, counties, cities, states) from [IPUMS NHGIS](https://www.nhgis.org/data-availability#gis-files). Likewise, the environmental dataset (likely be a raster dataset) describing environmental characteristic (e.g., land cover, climate) are imported from [here](https://www.mrlc.gov/data).
+
+## Processing Pipeline
+### 1. Data Acquisition
+We acquire input data necessary for each measure through programmatic means using R packages (e.g., ipumsr for IPUMS extracts) or by downloading files from specified sources. 
+
+### 2. Data Processing
+Once the data is acquired, the processing involves the following steps:
+
+Acquiring GIS Data: Obtain county-level shapefiles for various years and land cover data from sources such as the National Land Cover Database (NLCD).
+
+Transforming Data: Filter out non-contiguous US states and align the coordinate reference systems of the GIS data to match the land cover data.
+
+Calculating Summary Measures: For each year of land cover data, calculate the land cover fractions by overlaying it with the county-level shapefiles using the exactextract package.. The results include summaries of land cover classes for each geographic unit.
+
+### 3. Output Generation
+Output the processed data to CSV files for each year, followed by merging them together. Repeat the same process for any geographic unit of choice.
 
 ## Team Members
 
