@@ -4,7 +4,7 @@ This repository details the code and output of the [2024 ISDRI SDF - NHGIS](http
 
 1. Acquires environmental data, including land cover and climate information, for the United States.
 2. Acquires GIS data describing the boundaries of different geographic units, including counties, cities, census tracts, and places.
-3. Creates summary measures of land cover for counties, cities, and census tracts (extendable to other measures like climate).
+3. Creates summary measures of land cover for these geographic units (extendable to other measures like climate).
 4. Creates output files for dissemination via [IPUMS NHGIS](https://www.nhgis.org/environmental-summaries).
 
 Key outcomes of the project include environmental summary data and a code repository.
