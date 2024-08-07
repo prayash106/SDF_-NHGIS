@@ -16,25 +16,25 @@ library(dplyr)
 library(writexl)
 
 # Define the extract for the place shapefiles
-ext_tract <- define_extract_nhgis(
+ext_place <- define_extract_nhgis(
   description = "place shapefiles request",
   shapefiles = "us_place_2022_tl2022"
 )
 
 # Send the extract request
-ex_submitted_tract <- submit_extract(ext_tract)
+ex_submitted_place <- submit_extract(ext_place)
 
 # Check the status of the extract
-ex_tract_complete <- wait_for_extract(ex_submitted_tract)
-ex_tract_complete$status
-names(ex_tract_complete$download_links)
-is_extract_ready(ex_tract_complete)
+ex_place_complete <- wait_for_extract(ex_submitted_place)
+ex_place_complete$status
+names(ex_place_complete$download_links)
+is_extract_ready(ex_place_complete)
 
 # Define the filepath for the census tract shapefiles
-tract_fp <- download_extract(ex_submitted_tract)
+place_fp <- download_extract(ex_submitted_place)
 
 # Open and read the census tract shapefiles
-place <- read_ipums_sf(tract_fp)
+place <- read_ipums_sf(place_fp)
 
 # Load the NLCD files setting NLCD as working directory
 NLCD_2021 <- rast("nlcd_2021_land_cover_l48_20230630.img")
