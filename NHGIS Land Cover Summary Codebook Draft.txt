@@ -1,0 +1,231 @@
+﻿----------------------------------------------------------------------------------------------------
+Documentation [a]for NHGIS land cover summaries
+----------------------------------------------------------------------------------------------------
+
+
+Contents
+    - Data Summary
+    - Zone Identifiers
+    - Data Dictionary
+    - Notes
+    - References
+    - Citation and Use
+
+
+Additional documentation on NHGIS environmental summaries, including land cover summaries, is available at: https://www.nhgis.org/user-resources/environmental-summaries.
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Data Summary
+----------------------------------------------------------------------------------------------------
+ 
+Each NHGIS land cover summary file provides land cover data summarized for geographic units in a geographic level (e.g., county, census tract, place, and core-based statistical area). 
+
+
+The land cover summary file name indicates which geographic level, year, and the file type are included in the file:
+
+
+* Time varies by file:
+   * US_[geographic level]_[geographic level year]_nlcd_[land cover year].csv
+
+
+* Time varies by column:
+   * US_[geographic_level]_nlcd_[land cover year].csv
+
+
+
+
+Geographic level codes:
+
+
+        tr - Census tract
+        co - County
+        pl - Place
+        cbsa - Core-based statistical area
+
+
+
+
+Environmental summaries file content:
+
+
+Time varies by file: 
+* The first row is a header row
+* Each subsequent row represents a geographic unit
+* The GISJOIN field contains NHGIS-standard identifiers
+* GEOGYEAR field represents the source year of the shapefile
+* NLCDYEAR field represents the source year of the land cover raster
+* The frac_[land cover class] fields are the proportions of the area covered by the land cover class[b]
+
+
+Time varies by column: 
+* The first row is a header row
+* Each subsequent row represents a geographic unit
+* The GISJOIN field contains NHGIS-standard identifiers
+* GEOGYEAR field represents the source year of the shapefile
+* The frac_[land cover class]_[land cover year] fields are the proportions of the area covered by the land cover class for the given GISJOIN[c] in the land cover source year 
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Zone Identifiers
+----------------------------------------------------------------------------------------------------
+
+
+For a general explanation of the identifiers (GISJOIN) and land cover class description, see: https://www.nhgis.org/environmental-summaries.
+
+
+Zone identifier specifications:
+
+
+Census tracts
+* GISJOIN: 14 characters:
+   * "G"                 1 character
+   * State NHGIS code:   3 digits (FIPS + "0")
+   * County NHGIS code:  4 digits (FIPS + "0")
+   * Census tract code:  6 digits
+
+
+Counties
+* GISJOIN: 8 characters:
+   * "G"                 1 character
+   * State NHGIS code:   3 digits (FIPS + "0")
+   * County NHGIS code:  4 digits (FIPS + "0")
+
+
+Places
+* GISJOIN: 9 characters:
+   * "G"                 1 character
+   * State NHGIS code:   3 digits (FIPS + "0")
+   * Place code:  5 digits 
+
+
+Core-Based Statistical Area (CBSA)
+* GISJOIN: 6 characters:
+   * "G"                 1 character
+   * CBSA code: 5 digits
+
+
+
+
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+
+
+Time varies by file:
+
+
+GISJOIN: GIS Join Match Code
+GEOGYEAR: Geography Year
+NLCDYEAR: Land Cover Year
+frac_0[d][e]: placeholder[f][g][h]
+frac_11: Proportion of [geographic unit] covered by land cover class 11, open water
+frac_12: Proportion of [geographic unit] covered by land cover class 12, perennial ice/snow
+frac_21: Proportion of [geographic unit] covered by land cover class 21, developed, open space
+frac_22: Proportion of [geographic unit] covered by land cover class 22, developed, low intensity
+frac_23: Proportion of [geographic unit] covered by land cover class 23, developed, medium intensity
+frac_24: Proportion of [geographic unit] covered by land cover class 24, developed, high intensity
+frac_31: Proportion of [geographic unit] covered by land cover class 31, barren land (rock/sand/clay)
+frac_41: Proportion of [geographic unit] covered by land cover class 41, deciduous forest
+frac_42: Proportion of [geographic unit] covered by land cover class 42, evergreen forest 
+frac_43: Proportion of [geographic unit] covered by land cover class 43, mixed forest
+frac_52: Proportion of [geographic unit] covered by land cover class 52, shrub/scrub
+frac_71: Proportion of [geographic unit] covered by land cover class 71, grassland/herbaceous
+frac_81: Proportion of [geographic unit] covered by land cover class 81, pasture/hay
+frac_82: Proportion of [geographic unit] covered by land cover class 82, cultivated crops 
+frac_90: Proportion of [geographic unit] covered by land cover class 90, woody wetlands
+frac_95: Proportion of [geographic unit] covered by land cover class 95, emergent herbaceous wetlands 
+
+
+
+
+Time varies by column:
+
+
+GISJOIN: GIS Join Match Code
+GEOGYEAR: Geography Year
+frac_0: placeholder
+frac_21_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 21, developed, open space 
+frac_22_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 22, developed, low intensity 
+frac_23_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 23, developed, medium intensity 
+frac_24_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 24, developed, high intensity 
+frac_31_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 31, barren land (rock/sand/clay)
+frac_41_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 41, deciduous forest 
+frac_42_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 42, evergreen forest 
+frac_43_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 43, mixed forest 
+frac_52_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 52, shrub/scrub
+frac_71_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 71, grassland/herbaceous 
+frac_81_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 81, pasture/hay
+frac_82_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 82, cultivated crops 
+frac_90_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 90, woody wetlands 
+frac_95_[land cover year]: [land cover year]: Proportion of [geographic unit] covered by land cover class 95, emergent herbaceous wetlands         
+
+
+
+
+More details about the land cover class descriptions can be found at: https://www.nhgis.org/environmental-summaries#land-cover.
+
+
+----------------------------------------------------------------------------------------------------
+Notes
+----------------------------------------------------------------------------------------------------
+
+
+The following process was used to create the land cover summaries:
+
+
+1. Download the land cover data from the National Land Cover Database (NLCD) (https://www.mrlc.gov).
+2. Download the GIS file(s) for the geographic units for which environmental summaries will be calculated. 
+3. Calculate the fraction (or proportion) of each geographic unit’s area covered by a given land cover class.         
+
+
+
+
+Additional documentation on the R scripts used is available at: https://www.nhgis.org/environmental-summaries.
+
+
+
+
+----------------------------------------------------------------------------------------------------
+References
+----------------------------------------------------------------------------------------------------
+
+
+The National Land Cover Database (NLCD) can be obtained from https://www.mrlc.gov/.
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Citation and Use
+----------------------------------------------------------------------------------------------------
+
+
+Use of NHGIS environmental summaries is subject to the same conditions as for all NHGIS data. See https://www.nhgis.org/citation-and-use-nhgis-data.
+
+
+
+
+
+
+[a]REFERENCE
+crosswalk 
+https://docs.google.com/document/d/1tSTotyjqc-8HxSTUZi6HdvSR4viSTJhhgOry4f2W3XY/edit
+
+
+2015 time varies by column
+https://docs.google.com/document/d/1zbdwwJu_redqa1D2L1N4qFeOkab2E94a0GEX1831uY0/edit
+[b]should the total area be added?? like how the summaries were previously made? 
+
+
+I remember talking about not putting them in a meeting, but might be easier to convert them to area if necessary??
+[c]wording
+[d]capitalize them?? change name to PROP??
+[e]I haven't yet decided about this yet! I'm tempted to leave them lowercase.
+[f]change the script to remove this??
+[g]I need to look at the output files and see if any geographic units have values in this field. If they do, we'll need to retain frac_0 and provide a name for it.
+[h]As far as I know, none of the output have any data in frac_0 column, if we want I can check them quickly and remove them if they seem unnecessary.
